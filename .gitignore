@@ -1,0 +1,28 @@
+# Local scan results and sensitive host evidence
+/output/
+/backend/dma_forensics.db
+/backend/*.db
+/backend/*.sqlite
+/backend/*.sqlite3
+
+# Build artifacts and unsigned local executables
+*.exe
+*.cab
+~*.CAB
+/bin/
+/obj/
+
+# Python environments, bytecode, and test caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# User-specific editor tasks and settings
+.vscode/

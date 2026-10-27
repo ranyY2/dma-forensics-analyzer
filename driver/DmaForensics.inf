@@ -1,0 +1,34 @@
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={78A1C341-4539-11D3-B88D-00C04FAD5171}
+Provider=%ProviderName%
+DriverVer=09/16/2026,0.1.0.0
+CatalogFile=DmaForensics.cat
+
+[DefaultInstall.NTamd64]
+CopyFiles=DriverCopy
+AddReg=DriverAddReg
+
+[DefaultInstall.NTamd64.Services]
+AddService=DmaForensics,0x00000002,ServiceInstall
+
+[DestinationDirs]
+DriverCopy=12
+
+[DriverCopy]
+DmaForensics.sys
+
+[DriverAddReg]
+HKR,,DisplayName,0x00000000,%ServiceName%
+
+[ServiceInstall]
+DisplayName=%ServiceName%
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%12%\DmaForensics.sys
+
+[Strings]
+ProviderName="DMA Forensics"
+ServiceName="DMA Forensics Telemetry Driver"
